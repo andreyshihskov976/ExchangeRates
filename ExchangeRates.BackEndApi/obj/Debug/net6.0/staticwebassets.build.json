@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "EaWoXoHlX9WB+6bgpHNsa3JwhdrZAfcTmzR5DZxxIEg=",
+  "Source": "ExchangeRates.BackEndApi",
+  "BasePath": "_content/ExchangeRates.BackEndApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
