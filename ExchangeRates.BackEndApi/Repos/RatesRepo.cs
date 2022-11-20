@@ -45,6 +45,7 @@ namespace ExchangeRates.BackEndApi.Repos
             if (_hasBeenChanged)
                 using (FileStream fs = new FileStream(AppContext.BaseDirectory + @"AppData/RatesCache.json", FileMode.OpenOrCreate))
                 {
+                    _rates = _rates.OrderBy(r => r.Date).ToList();
                     await JsonSerializer.SerializeAsync<ICollection<CurrencyRate>>(fs, _rates);
                     Console.WriteLine("!!!--> Data has been saved to file <--!!!");
                 }

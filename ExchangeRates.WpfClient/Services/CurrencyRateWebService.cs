@@ -15,7 +15,7 @@ namespace ExchangeRates.WpfClient.Services
             {
                 var response = await client.GetAsync
                 (
-                    $@"https://localhost:7195/api/CurrencyRates?currency_Id={currencyName}&startDate={startDate}&endDate={endDate}"
+                    $@"https://localhost:7195/api/CurrencyRates?currency_Abbr={currencyName}&startDate={startDate.Date}&endDate={endDate.Date}"
                 );
                 var result = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<ICollection<CurrencyRateDto>>(result);

@@ -4,11 +4,9 @@ C:\Users\Андрей\Source\Repos\ExchangeRates_Vol.1\ExchangeRates.WpfClient\b
 C:\Users\Андрей\Source\Repos\ExchangeRates_Vol.1\ExchangeRates.WpfClient\bin\Debug\net6.0-windows\ExchangeRates.WpfClient.dll
 C:\Users\Андрей\Source\Repos\ExchangeRates_Vol.1\ExchangeRates.WpfClient\bin\Debug\net6.0-windows\ExchangeRates.WpfClient.pdb
 C:\Users\Андрей\Source\Repos\ExchangeRates_Vol.1\ExchangeRates.WpfClient\obj\Debug\net6.0-windows\ExchangeRates.WpfClient.csproj.AssemblyReference.cache
-C:\Users\Андрей\Source\Repos\ExchangeRates_Vol.1\ExchangeRates.WpfClient\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\Андрей\Source\Repos\ExchangeRates_Vol.1\ExchangeRates.WpfClient\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\Андрей\Source\Repos\ExchangeRates_Vol.1\ExchangeRates.WpfClient\obj\Debug\net6.0-windows\ExchangeRates.WpfClient_MarkupCompile.cache
 C:\Users\Андрей\Source\Repos\ExchangeRates_Vol.1\ExchangeRates.WpfClient\obj\Debug\net6.0-windows\ExchangeRates.WpfClient_MarkupCompile.lref
-C:\Users\Андрей\Source\Repos\ExchangeRates_Vol.1\ExchangeRates.WpfClient\obj\Debug\net6.0-windows\MainWindow.baml
 C:\Users\Андрей\Source\Repos\ExchangeRates_Vol.1\ExchangeRates.WpfClient\obj\Debug\net6.0-windows\ExchangeRates.WpfClient.g.resources
 C:\Users\Андрей\Source\Repos\ExchangeRates_Vol.1\ExchangeRates.WpfClient\obj\Debug\net6.0-windows\ExchangeRates.WpfClient.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Андрей\Source\Repos\ExchangeRates_Vol.1\ExchangeRates.WpfClient\obj\Debug\net6.0-windows\ExchangeRates.WpfClient.AssemblyInfoInputs.cache
@@ -29,3 +27,5 @@ C:\Users\Андрей\Source\Repos\ExchangeRates_Vol.1\ExchangeRates.WpfClient\b
 C:\Users\Андрей\Source\Repos\ExchangeRates_Vol.1\ExchangeRates.WpfClient\bin\Debug\net6.0-windows\Ninject.dll
 C:\Users\Андрей\Source\Repos\ExchangeRates_Vol.1\ExchangeRates.WpfClient\bin\Debug\net6.0-windows\ExchangeRates.Extensions.dll
 C:\Users\Андрей\Source\Repos\ExchangeRates_Vol.1\ExchangeRates.WpfClient\bin\Debug\net6.0-windows\ExchangeRates.Extensions.pdb
+C:\Users\Андрей\source\repos\ExchangeRates_Vol.1\ExchangeRates.WpfClient\obj\Debug\net6.0-windows\Views\MainWindow.g.cs
+C:\Users\Андрей\source\repos\ExchangeRates_Vol.1\ExchangeRates.WpfClient\obj\Debug\net6.0-windows\Views\MainWindow.baml

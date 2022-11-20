@@ -28,7 +28,7 @@ namespace ExchangeRates.BackEndApi.Controllers
             ICollection<CurrencyRate> currencyRates = new List<CurrencyRate>();
             try
             {
-                var date = startDate;
+                var date = startDate.Date;
                 do
                 {
                     var currencyRate = _currencyRatesRepo.GetRateByAbbrOnDate(currency_Abbr, date);
@@ -44,7 +44,7 @@ namespace ExchangeRates.BackEndApi.Controllers
                     }
                     date = date.AddDays(1);
                 }
-                while (date <= endDate);
+                while (date <= endDate.Date);
                 await _currencyRatesRepo.SaveChangesAsync();
             }
             catch (Exception ex)
