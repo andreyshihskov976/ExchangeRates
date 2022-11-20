@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace ExchangeRates.BackEndApi.Repos
 {
-    public class RatesRepo : IRatesRepo
+    public class CurrencyRatesRepo : ICurrencyRatesRepo
     {
         private bool _hasBeenChanged = false;
         private ICollection<CurrencyRate> _rates;
@@ -14,7 +14,7 @@ namespace ExchangeRates.BackEndApi.Repos
             set { _rates = value; }
         }
 
-        public RatesRepo()
+        public CurrencyRatesRepo()
         {
             LoadFromCache();
         }
@@ -35,9 +35,34 @@ namespace ExchangeRates.BackEndApi.Repos
             }
         }
 
-        public CurrencyRate GetRateByAbbrOnDate(string currency_Abbr, DateTime date)
+        public ICollection<CurrencyRate> GetCurrencyRates(int currency_Id, DateTime startDate, DateTime endDate)
         {
-            return _rates.FirstOrDefault(r => r.Cur_Abbreviation == currency_Abbr && r.Date.Date == date.Date);
+            return _rates.Where(r => r.Cur_ID == currency_Id && 
+                (r.Date.Date >= startDate.Date && r.Date.Date <= endDate.Date))
+                .ToList();
+        }
+
+        public void AddCurrencyRate(CurrencyRate rate)
+        {
+            if (rate != null)
+            {
+                _rates.Add(rate);
+                _rates = _rates.OrderBy(r => r.Date).ToList();
+                _hasBeenChanged = true;
+            }
+        }
+
+        public void AddCurrencyRates(ICollection<CurrencyRate> rates)
+        {
+            if (rates != null && rates.Count != 0)
+            {
+                foreach (var r in rates)
+                {
+                    _rates.Add(r);
+                }
+                _rates = _rates.OrderBy(r => r.Date).ToList();
+                _hasBeenChanged = true;
+            }
         }
 
         public async Task SaveChangesAsync()
@@ -49,15 +74,6 @@ namespace ExchangeRates.BackEndApi.Repos
                     Console.WriteLine("!!!--> Data has been saved to file <--!!!");
                 }
             _hasBeenChanged = false;
-        }
-
-        public void AddRate(CurrencyRate rate)
-        {
-            if (rate != null)
-            {
-                _rates.Add(rate);
-                _hasBeenChanged = true;
-            }
         }
     }
 }

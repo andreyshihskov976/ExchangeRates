@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddSingleton<IRatesRepo, RatesRepo>();
+builder.Services.AddSingleton<ICurrencyRatesRepo, CurrencyRatesRepo>();
 builder.Services.AddHttpClient<IHttpDataService, HttpDataService>()
     .ConfigurePrimaryHttpMessageHandler(_ => new HttpClientHandler
         {

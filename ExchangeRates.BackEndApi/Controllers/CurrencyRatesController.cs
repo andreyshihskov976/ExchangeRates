@@ -12,10 +12,10 @@ namespace ExchangeRates.BackEndApi.Controllers
     [ApiController]
     public class CurrencyRatesController : ControllerBase
     {
-        private readonly IRatesRepo _currencyRatesRepo;
+        private readonly ICurrencyRatesRepo _currencyRatesRepo;
         private readonly IMapper _mapper;
         private readonly IHttpDataService _httpDataService;
-        public CurrencyRatesController(IRatesRepo ratesRepo, IMapper mapper, IHttpDataService httpDataService)
+        public CurrencyRatesController(ICurrencyRatesRepo ratesRepo, IMapper mapper, IHttpDataService httpDataService)
         {
             _currencyRatesRepo = ratesRepo;
             _mapper = mapper;
@@ -23,60 +23,75 @@ namespace ExchangeRates.BackEndApi.Controllers
         }
 
         [HttpGet("")]
-        public async Task<ICollection<CurrencyRateDto>> GetRatesAsync(string currency_Abbr, DateTime startDate, DateTime endDate)
+        public async Task<ICollection<CurrencyRateDto>> GetRateDynamicsAsync(int currency_Id, DateTime startDate, DateTime endDate)
         {
-            ICollection<CurrencyRate> currencyRates = new List<CurrencyRate>();
-            try
+            var currencyRates = _currencyRatesRepo.GetCurrencyRates(currency_Id, startDate, endDate);
+            if (currencyRates.Count == 0)
             {
-                var date = startDate;
-                do
-                {
-                    var currencyRate = _currencyRatesRepo.GetRateByAbbrOnDate(currency_Abbr, date);
-                    if (currencyRate != null)
-                    {
-                        currencyRates.Add(currencyRate);
-                        Console.WriteLine("!!!--> Rate has been loaded from cache <--!!!");
-                    }
-                    else
-                    {
-                        currencyRates.Add(await GetFromNbrbApiAsync(currency_Abbr,date));
-                        Console.WriteLine("!!!--> Rate has been loaded from NBRB API <--!!!");
-                    }
-                    date = date.AddDays(1);
-                }
-                while (date <= endDate);
-                await _currencyRatesRepo.SaveChangesAsync();
+                await AddMissingCurrencyRates(currency_Id, startDate, endDate);
+                currencyRates = _currencyRatesRepo.GetCurrencyRates(currency_Id, startDate, endDate);
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine($"!!!--> We have a problem: {ex.Message} <--!!!");
+                var missingStartDate = FindFirtsMissingDate(startDate, endDate, currencyRates);
+                var missingEndDate = FindLastMissingDate(startDate, endDate, currencyRates);
+                if (missingStartDate <= missingEndDate)
+                {
+                    await AddMissingCurrencyRates(currency_Id, missingStartDate, missingEndDate);
+                    currencyRates = _currencyRatesRepo.GetCurrencyRates(currency_Id, startDate, endDate);
+                }
             }
             return _mapper.Map<ICollection<CurrencyRateDto>>(currencyRates);
         }
 
-        private async Task<CurrencyRate> GetFromNbrbApiAsync(string currency_Abbr, DateTime date)
+        private static DateTime FindFirtsMissingDate(DateTime start, DateTime end, ICollection<CurrencyRate> currencyRates)
         {
-            var currencyRate = new CurrencyRate();
+            while (start < end)
+                if (currencyRates.FirstOrDefault(r => r.Date.Date == start.Date) != null)
+                    start = start.AddDays(1);
+                else
+                    break;
+            return start;
+        }
+
+        private static DateTime FindLastMissingDate(DateTime start, DateTime end, ICollection<CurrencyRate> currencyRates)
+        {
+            while (end > start)
+                if (currencyRates.FirstOrDefault(r => r.Date.Date == end.Date) != null)
+                    end = end.AddDays(-1);
+                else
+                    break;
+            return end;
+        }
+
+        private async Task AddMissingCurrencyRates(int currency_Id, DateTime startDate, DateTime endDate)
+        {
+            var missingCurrencyRates = await GetFromNbrbApiAsync(currency_Id, startDate, endDate);
+            _currencyRatesRepo.AddCurrencyRates(missingCurrencyRates);
+            await _currencyRatesRepo.SaveChangesAsync();
+        }
+
+        private async Task<ICollection<CurrencyRate>> GetFromNbrbApiAsync(int currency_Id, DateTime startDate, DateTime endDate)
+        {
             try
             {
                 Console.WriteLine("!!!--> Sending request to the NBRB Api <--!!!");
                 var response = await _httpDataService.SendGetRequest
                 (
-                    $"https://www.nbrb.by/api/exrates/rates/{currency_Abbr}?parammode=2&ondate={date}"
+                    $"https://www.nbrb.by/API/ExRates/Rates/Dynamics/{currency_Id}?startDate={startDate}&endDate={endDate}"
                 );
                 if (response.IsSuccessStatusCode)
                 {
                     var result = await response.Content.ReadAsStringAsync();
-                    currencyRate = JsonConvert.DeserializeObject<CurrencyRate>(result);
-                    _currencyRatesRepo.AddRate(currencyRate);
-                    return currencyRate;
+                    var currencyRates = JsonConvert.DeserializeObject<ICollection<CurrencyRate>>(result);
+                    return currencyRates;
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"!!!--> Could not send synchronously: {ex.Message} <--!!!");
             }
-            return currencyRate;
+            return null;
         }
     }
 }
