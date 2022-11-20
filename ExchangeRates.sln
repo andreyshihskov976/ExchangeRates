@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRates.Extensions", "ExchangeRates.Extensions\ExchangeRates.Extensions.csproj", "{BDBC3A76-ABB4-4628-8EBC-003397604FA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRates.BackEndApi", "ExchangeRates.BackEndApi\ExchangeRates.BackEndApi.csproj", "{EB248C90-96A7-44CD-A5C6-0F4CBED3C1EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDBC3A76-ABB4-4628-8EBC-003397604FA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDBC3A76-ABB4-4628-8EBC-003397604FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDBC3A76-ABB4-4628-8EBC-003397604FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDBC3A76-ABB4-4628-8EBC-003397604FA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB248C90-96A7-44CD-A5C6-0F4CBED3C1EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB248C90-96A7-44CD-A5C6-0F4CBED3C1EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB248C90-96A7-44CD-A5C6-0F4CBED3C1EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB248C90-96A7-44CD-A5C6-0F4CBED3C1EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
