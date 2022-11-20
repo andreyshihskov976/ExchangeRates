@@ -1,33 +1,41 @@
 {
   "format": 1,
   "restore": {
-    "/Users/andreyshishkov/projects/ExchangeRates/ExchangeRates.BackEndApi/ExchangeRates.BackEndApi.csproj": {}
+    "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.BackEndApi\\ExchangeRates.BackEndApi.csproj": {}
   },
   "projects": {
-    "/Users/andreyshishkov/projects/ExchangeRates/ExchangeRates.BackEndApi/ExchangeRates.BackEndApi.csproj": {
+    "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.BackEndApi\\ExchangeRates.BackEndApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/andreyshishkov/projects/ExchangeRates/ExchangeRates.BackEndApi/ExchangeRates.BackEndApi.csproj",
+        "projectUniqueName": "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.BackEndApi\\ExchangeRates.BackEndApi.csproj",
         "projectName": "ExchangeRates.BackEndApi",
-        "projectPath": "/Users/andreyshishkov/projects/ExchangeRates/ExchangeRates.BackEndApi/ExchangeRates.BackEndApi.csproj",
-        "packagesPath": "/Users/andreyshishkov/.nuget/packages/",
-        "outputPath": "/Users/andreyshishkov/projects/ExchangeRates/ExchangeRates.BackEndApi/obj/",
+        "projectPath": "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.BackEndApi\\ExchangeRates.BackEndApi.csproj",
+        "packagesPath": "C:\\Users\\Андрей\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.BackEndApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/andreyshishkov/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Андрей\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.pkg.github.com/EasySit-App/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/andreyshishkov/projects/ExchangeRates/ExchangeRates.Extensions/ExchangeRates.Extensions.csproj": {
-                "projectPath": "/Users/andreyshishkov/projects/ExchangeRates/ExchangeRates.Extensions/ExchangeRates.Extensions.csproj"
+              "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.Extensions\\ExchangeRates.Extensions.csproj": {
+                "projectPath": "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.Extensions\\ExchangeRates.Extensions.csproj"
               }
             }
           }
@@ -65,8 +73,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -78,27 +85,35 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.403/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300-preview.22154.4\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/andreyshishkov/projects/ExchangeRates/ExchangeRates.Extensions/ExchangeRates.Extensions.csproj": {
+    "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.Extensions\\ExchangeRates.Extensions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/andreyshishkov/projects/ExchangeRates/ExchangeRates.Extensions/ExchangeRates.Extensions.csproj",
+        "projectUniqueName": "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.Extensions\\ExchangeRates.Extensions.csproj",
         "projectName": "ExchangeRates.Extensions",
-        "projectPath": "/Users/andreyshishkov/projects/ExchangeRates/ExchangeRates.Extensions/ExchangeRates.Extensions.csproj",
-        "packagesPath": "/Users/andreyshishkov/.nuget/packages/",
-        "outputPath": "/Users/andreyshishkov/projects/ExchangeRates/ExchangeRates.Extensions/obj/",
+        "projectPath": "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.Extensions\\ExchangeRates.Extensions.csproj",
+        "packagesPath": "C:\\Users\\Андрей\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.Extensions\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/andreyshishkov/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Андрей\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.pkg.github.com/EasySit-App/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -131,8 +146,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -141,7 +155,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.403/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300-preview.22154.4\\RuntimeIdentifierGraph.json"
         }
       }
     }
