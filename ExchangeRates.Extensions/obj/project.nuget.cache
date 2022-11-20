@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZQywynMz+QrFLa2SbHpGNNNkWEhyYfEtq+MFWmmP6aISJSGEeRgJZ9SFaqK+LJkXgWRxrC6owpBvgkOaRnR1Vg==",
+  "dgSpecHash": "Yin1sDQqZOPpLMFn5c+Tjhr+CGQ6wUhQZEt5Kt96PnLHeqFTYiE0qdtxtqDE/92yYrWUgFFw1X9s3qZCKaz26Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.Extensions\\ExchangeRates.Extensions.csproj",
+  "projectFilePath": "C:\\Users\\Андрей\\source\\repos\\ExchangeRates_Vol.1\\ExchangeRates.Extensions\\ExchangeRates.Extensions.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Андрей\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\Андрей\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",

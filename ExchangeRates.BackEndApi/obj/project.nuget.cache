@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D/awjNorrrGsI45qayCK9KOcJmLullkyY0YixP9gZJ9NOfsS2j4ZetodZMA1aI1W82HudjJBFOdpFjtpkCwfHw==",
+  "dgSpecHash": "nhNCXaP5CevkGl3RF8btGJAguwgU9PrpMbH+U4W6Y2JQq5bYxf7/qIIJwqz7BOKp7wpP6YI/8pGaMfYOLb0kRw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.BackEndApi\\ExchangeRates.BackEndApi.csproj",
+  "projectFilePath": "C:\\Users\\Андрей\\source\\repos\\ExchangeRates_Vol.1\\ExchangeRates.BackEndApi\\ExchangeRates.BackEndApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Андрей\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Андрей\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

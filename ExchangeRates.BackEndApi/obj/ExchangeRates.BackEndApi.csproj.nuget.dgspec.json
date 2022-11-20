@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.BackEndApi\\ExchangeRates.BackEndApi.csproj": {}
+    "C:\\Users\\Андрей\\source\\repos\\ExchangeRates_Vol.1\\ExchangeRates.BackEndApi\\ExchangeRates.BackEndApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.BackEndApi\\ExchangeRates.BackEndApi.csproj": {
+    "C:\\Users\\Андрей\\source\\repos\\ExchangeRates_Vol.1\\ExchangeRates.BackEndApi\\ExchangeRates.BackEndApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.BackEndApi\\ExchangeRates.BackEndApi.csproj",
+        "projectUniqueName": "C:\\Users\\Андрей\\source\\repos\\ExchangeRates_Vol.1\\ExchangeRates.BackEndApi\\ExchangeRates.BackEndApi.csproj",
         "projectName": "ExchangeRates.BackEndApi",
-        "projectPath": "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.BackEndApi\\ExchangeRates.BackEndApi.csproj",
+        "projectPath": "C:\\Users\\Андрей\\source\\repos\\ExchangeRates_Vol.1\\ExchangeRates.BackEndApi\\ExchangeRates.BackEndApi.csproj",
         "packagesPath": "C:\\Users\\Андрей\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.BackEndApi\\obj\\",
+        "outputPath": "C:\\Users\\Андрей\\source\\repos\\ExchangeRates_Vol.1\\ExchangeRates.BackEndApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -34,8 +34,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.Extensions\\ExchangeRates.Extensions.csproj": {
-                "projectPath": "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.Extensions\\ExchangeRates.Extensions.csproj"
+              "C:\\Users\\Андрей\\source\\repos\\ExchangeRates_Vol.1\\ExchangeRates.Extensions\\ExchangeRates.Extensions.csproj": {
+                "projectPath": "C:\\Users\\Андрей\\source\\repos\\ExchangeRates_Vol.1\\ExchangeRates.Extensions\\ExchangeRates.Extensions.csproj"
               }
             }
           }
@@ -89,14 +89,14 @@
         }
       }
     },
-    "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.Extensions\\ExchangeRates.Extensions.csproj": {
+    "C:\\Users\\Андрей\\source\\repos\\ExchangeRates_Vol.1\\ExchangeRates.Extensions\\ExchangeRates.Extensions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.Extensions\\ExchangeRates.Extensions.csproj",
+        "projectUniqueName": "C:\\Users\\Андрей\\source\\repos\\ExchangeRates_Vol.1\\ExchangeRates.Extensions\\ExchangeRates.Extensions.csproj",
         "projectName": "ExchangeRates.Extensions",
-        "projectPath": "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.Extensions\\ExchangeRates.Extensions.csproj",
+        "projectPath": "C:\\Users\\Андрей\\source\\repos\\ExchangeRates_Vol.1\\ExchangeRates.Extensions\\ExchangeRates.Extensions.csproj",
         "packagesPath": "C:\\Users\\Андрей\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Андрей\\Source\\Repos\\ExchangeRates_Vol.1\\ExchangeRates.Extensions\\obj\\",
+        "outputPath": "C:\\Users\\Андрей\\source\\repos\\ExchangeRates_Vol.1\\ExchangeRates.Extensions\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
