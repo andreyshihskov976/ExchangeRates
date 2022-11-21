@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExchangeRates.WpfClient.Services
 {
@@ -12,6 +8,7 @@ namespace ExchangeRates.WpfClient.Services
         public static HttpClient CreateClient(string accessToken = "")
         {
             var client = new HttpClient();
+            client.BaseAddress = new Uri("https://localhost:7195/api/");
             if (!string.IsNullOrWhiteSpace(accessToken))
             {
                 client.DefaultRequestHeaders.Authorization =

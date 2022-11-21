@@ -19,6 +19,7 @@ namespace ExchangeRates.WpfClient
         private void App_Startup(object sender, StartupEventArgs e)
         {
             var injector = new DInjector();
+
             MainWindow = new MainWindow(injector.GetMainVM());
 
             LiveCharts.Configure(config => config.HasMap<CurrencyRateDto>((rate, point) =>

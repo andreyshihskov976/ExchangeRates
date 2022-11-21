@@ -1,5 +1,6 @@
 using ExchangeRates.BackEndApi.Models;
 using ExchangeRates.BackEndApi.Repos.Interfaces;
+using System.Reflection;
 using System.Text.Json;
 
 namespace ExchangeRates.BackEndApi.Repos
@@ -8,14 +9,17 @@ namespace ExchangeRates.BackEndApi.Repos
     {
         private bool _hasBeenChanged = false;
         private ICollection<CurrencyRate> _rates;
+        private readonly ILogger _logger;
+
         public ICollection<CurrencyRate> Rates
         {
             get { return _rates; }
             set { _rates = value; }
         }
 
-        public RatesRepo()
+        public RatesRepo(ILogger<RatesRepo> logger)
         {
+            _logger = logger;
             LoadFromCache();
         }
 
@@ -23,14 +27,15 @@ namespace ExchangeRates.BackEndApi.Repos
         {
             try
             {
-                using (FileStream fs = new FileStream(AppContext.BaseDirectory + @"AppData/RatesCache.json", FileMode.Open))
+                using (FileStream fs = new FileStream(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\AppData\RatesCache.json", FileMode.Open))
                 {
                     _rates = JsonSerializer.Deserialize<ICollection<CurrencyRate>>(fs);
-                    Console.WriteLine("!!!--> Data has been loaded from file <--!!!");
+                    _logger.Log(LogLevel.Information,$@"{DateTime.Now} - The cache was loaded successfully.");
                 }
             }
             catch (FileNotFoundException)
             {
+                _logger.Log(LogLevel.Critical, $@"{DateTime.Now} - The cache was not found.");
                 _rates = new List<CurrencyRate>();
             }
         }
@@ -46,8 +51,8 @@ namespace ExchangeRates.BackEndApi.Repos
                 using (FileStream fs = new FileStream(AppContext.BaseDirectory + @"AppData/RatesCache.json", FileMode.OpenOrCreate))
                 {
                     _rates = _rates.OrderBy(r => r.Date).ToList();
-                    await JsonSerializer.SerializeAsync<ICollection<CurrencyRate>>(fs, _rates);
-                    Console.WriteLine("!!!--> Data has been saved to file <--!!!");
+                    await JsonSerializer.SerializeAsync(fs, _rates);
+                    _logger.Log(LogLevel.Information, $@"{DateTime.Now} - The data was successfully cached.");
                 }
             _hasBeenChanged = false;
         }

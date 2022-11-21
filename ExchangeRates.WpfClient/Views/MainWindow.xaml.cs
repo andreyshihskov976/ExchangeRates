@@ -1,7 +1,5 @@
 ﻿using ExchangeRates.WpfClient.ViewModels;
-using LiveChartsCore.SkiaSharpView;
 using System;
-using System.Collections.Generic;
 using System.Windows;
 
 namespace ExchangeRates.WpfClient

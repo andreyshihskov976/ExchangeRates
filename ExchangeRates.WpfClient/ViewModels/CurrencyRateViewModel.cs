@@ -5,10 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
-
 using LiveChartsCore;
 using LiveChartsCore.SkiaSharpView;
-using System.Drawing;
 using LiveChartsCore.SkiaSharpView.Painting;
 using SkiaSharp;
 
@@ -47,7 +45,7 @@ namespace ExchangeRates.WpfClient.ViewModels
                 new LineSeries<CurrencyRateDto>
                 {
                     Name = $"Chart",
-                    Fill = new SolidColorPaint(SKColors.MediumAquamarine),
+                    Fill = null,
                     Stroke = new SolidColorPaint(SKColors.Aquamarine) { StrokeThickness = 1 },
                     TooltipLabelFormatter = point => $"{point.PrimaryValue:F4} BYN",
                     Values = currencyRates,
