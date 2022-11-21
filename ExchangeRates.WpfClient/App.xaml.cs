@@ -1,4 +1,6 @@
-﻿using ExchangeRates.WpfClient.Util;
+﻿using ExchangeRates.Extensions.DTOs;
+using ExchangeRates.WpfClient.Util;
+using LiveChartsCore;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -18,6 +20,13 @@ namespace ExchangeRates.WpfClient
         {
             var injector = new DInjector();
             MainWindow = new MainWindow(injector.GetMainVM());
+
+            LiveCharts.Configure(config => config.HasMap<CurrencyRateDto>((rate, point) =>
+            {
+                point.PrimaryValue = (double)rate.Value;
+                point.SecondaryValue = point.Context.Index;
+            }));
+
             MainWindow.Show();
         }
     }

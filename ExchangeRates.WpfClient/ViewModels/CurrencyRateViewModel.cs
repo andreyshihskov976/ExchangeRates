@@ -6,6 +6,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 
+using LiveChartsCore;
+using LiveChartsCore.SkiaSharpView;
+using System.Drawing;
+using LiveChartsCore.SkiaSharpView.Painting;
+using SkiaSharp;
+
 namespace ExchangeRates.WpfClient.ViewModels
 {
     public class CurrencyRateViewModel : BaseViewModel
@@ -34,7 +40,48 @@ namespace ExchangeRates.WpfClient.ViewModels
 
         private async void GetCharts(object obj)
         {
-            CurrencyRates = await _service.GetCurrency(CurrencyName, StartDate, EndDate);
+            var currencyRates = await _service.GetCurrency(CurrencyName, StartDate, EndDate);
+
+            ChartSeries = new ISeries[]
+            {
+                new LineSeries<CurrencyRateDto>
+                {
+                    Name = $"Chart",
+                    Fill = new SolidColorPaint(SKColors.MediumAquamarine),
+                    Stroke = new SolidColorPaint(SKColors.Aquamarine) { StrokeThickness = 1 },
+                    TooltipLabelFormatter = point => $"{point.PrimaryValue:F4} BYN",
+                    Values = currencyRates,
+                    LineSmoothness = 0,
+                    GeometrySize = 5,
+                    GeometryFill = new SolidColorPaint(SKColors.WhiteSmoke),
+                    GeometryStroke = new SolidColorPaint(SKColors.Aquamarine) {StrokeThickness = 4}
+                }
+            };
+
+            XAxes = new List<Axis>()
+            {
+                new Axis
+                {
+                    Labels = currencyRates.Select(cr => cr.Date.ToShortDateString()).ToList(),
+                    LabelsRotation = 45,
+                    TextSize = 13,
+                    MinLimit = 0,
+                    MaxLimit = currencyRates.Count(),
+                    MinStep = 1
+                }
+            };
+
+            YAxes = new List<Axis>()
+            {
+                new Axis
+                {
+                    Labeler = (value) => value.ToString("F2")+" BYN",
+                    TextSize = 13,
+                    MinLimit = (double)currencyRates.Min(cr => cr.Value).Value - 0.01,
+                    MaxLimit = (double)currencyRates.Max(cr => cr.Value).Value + 0.01,
+                    MinStep = 0.005
+                }
+            };
         }
 
         public ICommand GetChartCommand { get; private set; }
@@ -83,17 +130,45 @@ namespace ExchangeRates.WpfClient.ViewModels
             }
         }
 
-        private ICollection<CurrencyRateDto> _currencyRates;
+        private ISeries[] _chartSeries;
 
-        public ICollection<CurrencyRateDto> CurrencyRates
+        public ISeries[] ChartSeries
         {
-            get { return _currencyRates; }
-            set 
+            get { return _chartSeries; }
+            set
             {
-                if (_currencyRates == value)
+                if(_chartSeries == value)
                     return;
-                _currencyRates = value;
-                OnPropertyChanged(nameof(CurrencyRates));
+                _chartSeries = value;
+                OnPropertyChanged(nameof(ChartSeries));
+            }
+        }
+
+        private List<Axis> _xAxes;
+
+        public List<Axis> XAxes
+        {
+            get { return _xAxes; }
+            set
+            {
+                if (_xAxes == value)
+                    return;
+                _xAxes = value;
+                OnPropertyChanged(nameof(XAxes));
+            }
+        }
+
+        private List<Axis> _yAxes;
+
+        public List<Axis> YAxes
+        {
+            get { return _yAxes; }
+            set
+            {
+                if (_yAxes == value)
+                    return;
+                _yAxes = value;
+                OnPropertyChanged(nameof(YAxes));
             }
         }
     }

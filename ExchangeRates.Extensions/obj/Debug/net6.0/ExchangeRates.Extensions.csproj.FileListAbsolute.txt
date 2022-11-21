@@ -10,3 +10,15 @@
 /Users/andreyshishkov/projects/ExchangeRates/ExchangeRates.Extensions/obj/Debug/net6.0/refint/ExchangeRates.Extensions.dll
 /Users/andreyshishkov/projects/ExchangeRates/ExchangeRates.Extensions/obj/Debug/net6.0/ExchangeRates.Extensions.pdb
 /Users/andreyshishkov/projects/ExchangeRates/ExchangeRates.Extensions/obj/Debug/net6.0/ref/ExchangeRates.Extensions.dll
+C:\Users\Андрей\source\repos\ExchangeRates_Vol.1\ExchangeRates.Extensions\bin\Debug\net6.0\ExchangeRates.Extensions.deps.json
+C:\Users\Андрей\source\repos\ExchangeRates_Vol.1\ExchangeRates.Extensions\bin\Debug\net6.0\ExchangeRates.Extensions.dll
+C:\Users\Андрей\source\repos\ExchangeRates_Vol.1\ExchangeRates.Extensions\bin\Debug\net6.0\ExchangeRates.Extensions.pdb
+C:\Users\Андрей\source\repos\ExchangeRates_Vol.1\ExchangeRates.Extensions\obj\Debug\net6.0\ExchangeRates.Extensions.csproj.AssemblyReference.cache
+C:\Users\Андрей\source\repos\ExchangeRates_Vol.1\ExchangeRates.Extensions\obj\Debug\net6.0\ExchangeRates.Extensions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Андрей\source\repos\ExchangeRates_Vol.1\ExchangeRates.Extensions\obj\Debug\net6.0\ExchangeRates.Extensions.AssemblyInfoInputs.cache
+C:\Users\Андрей\source\repos\ExchangeRates_Vol.1\ExchangeRates.Extensions\obj\Debug\net6.0\ExchangeRates.Extensions.AssemblyInfo.cs
+C:\Users\Андрей\source\repos\ExchangeRates_Vol.1\ExchangeRates.Extensions\obj\Debug\net6.0\ExchangeRates.Extensions.csproj.CoreCompileInputs.cache
+C:\Users\Андрей\source\repos\ExchangeRates_Vol.1\ExchangeRates.Extensions\obj\Debug\net6.0\ExchangeRates.Extensions.dll
+C:\Users\Андрей\source\repos\ExchangeRates_Vol.1\ExchangeRates.Extensions\obj\Debug\net6.0\refint\ExchangeRates.Extensions.dll
+C:\Users\Андрей\source\repos\ExchangeRates_Vol.1\ExchangeRates.Extensions\obj\Debug\net6.0\ExchangeRates.Extensions.pdb
+C:\Users\Андрей\source\repos\ExchangeRates_Vol.1\ExchangeRates.Extensions\obj\Debug\net6.0\ref\ExchangeRates.Extensions.dll

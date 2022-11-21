@@ -3,36 +3,43 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
         xmlns:local="clr-namespace:ExchangeRates.WpfClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="650" Width="1000" MinHeight="650" MinWidth="1000">
     <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="45"/>
+            <RowDefinition Height="55"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Border BorderThickness="2" BorderBrush="#AEC2EB" Margin="3" Padding="0" CornerRadius="20" Grid.Row="0" Grid.Column="0" Width="Auto">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center">
-                <Label>Получить график</Label>
-                <Label>от:</Label>
-                <DatePicker Name="StartDatePicker" Width="150" Margin="10,0,10,0"
-                            SelectedDate="{Binding Path=StartDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                            FirstDayOfWeek="Monday" SelectedDateFormat="Long"/>
-                <Label>по:</Label>
-                <DatePicker Name="EndDatePicker"  Width="150" Margin="10,0,10,0"
-                            DisplayDateStart="{Binding Path=StartDate, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
-                            SelectedDate="{Binding Path=EndDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                            FirstDayOfWeek="Monday" SelectedDateFormat="Long"/>
-                <Label>по валюте:</Label>
-                <ComboBox Width="60" Margin="10,0,10,0"
-                          ItemsSource="{Binding Path=Currencies, UpdateSourceTrigger=PropertyChanged}"
-                          SelectedItem="{Binding Path=CurrencyName, UpdateSourceTrigger=PropertyChanged}"/>
-                <Button HorizontalAlignment="Right" Margin="10,0,10,0" Padding="3,0,3,0" Content="Получить" Command="{Binding Path=GetChartCommand}"/>
+        <Border BorderThickness="2" BorderBrush="#AEC2EB" Margin="3" Padding="15,0,15,0" CornerRadius="20" Grid.Row="0" Grid.Column="0" Width="Auto">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label FontSize="16">Получить график</Label>
+                <Label FontSize="16">от:</Label>
+                <DatePicker Name="StartDatePicker" Margin="10,0,10,0"
+                            SelectedDate="{Binding Path=StartDate}"
+                            FirstDayOfWeek="Monday" SelectedDateFormat="Long" FontSize="16"/>
+                <Label FontSize="16">по:</Label>
+                <DatePicker Name="EndDatePicker" Margin="10,0,10,0"
+                            DisplayDateStart="{Binding Path=StartDate}"
+                            SelectedDate="{Binding Path=EndDate}"
+                            FirstDayOfWeek="Monday" SelectedDateFormat="Long" FontSize="16"/>
+                <Label FontSize="16">по валюте:</Label>
+                <ComboBox Margin="10,0,10,0"
+                          ItemsSource="{Binding Path=Currencies}"
+                          SelectedItem="{Binding Path=CurrencyName}" FontSize="16"/>
+                <Button HorizontalAlignment="Right" Margin="10,0,10,0" Padding="3,0,3,0" Content="Получить" Command="{Binding Path=GetChartCommand}" FontSize="16"/>
             </StackPanel>
         </Border>
-        <Border Background="#AEC2EB" Margin="3" Padding="10" CornerRadius="20" Grid.Row="1" Grid.Column="0" />
+        <Border Background="#AEC2EB" Margin="3" Padding="10" CornerRadius="20" Grid.Row="1" Grid.Column="0">
+            <lvc:CartesianChart 
+                Name="Chart" Series="{Binding Path=ChartSeries}" 
+                XAxes="{Binding Path=XAxes}" YAxes="{Binding Path=YAxes}" 
+                ZoomMode="Both"
+            />
+        </Border>
     </Grid>
 </Window>

@@ -1,5 +1,7 @@
 ﻿using ExchangeRates.WpfClient.ViewModels;
+using LiveChartsCore.SkiaSharpView;
 using System;
+using System.Collections.Generic;
 using System.Windows;
 
 namespace ExchangeRates.WpfClient
@@ -28,6 +30,7 @@ namespace ExchangeRates.WpfClient
 
             EndDatePicker.DisplayDateStart = new DateTime(2017, 7, 1);
             EndDatePicker.DisplayDateEnd = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            EndDatePicker.SelectedDate = EndDatePicker.DisplayDateEnd;
         }
     }
 }
